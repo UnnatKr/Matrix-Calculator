@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matrix Calculator</title>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section id="banner">
+    <p>Matrix Calculator<hr></p>
+    <div id="upper">
+        <div id="matrix1" class="parent">
+            <h1 class="title">Matrix A</h1>
+            <input type="text" class="m1r1" value="0"/>
+            <input type="text" class="m1r1" value="0"/>
+            <input type="text" class="m1r1" value="0"/>
+            <input type="text" class="m1r2" value="0"/>
+            <input type="text" class="m1r2" value="0"/>
+            <input type="text" class="m1r2" value="0"/>
+            <input type="text" class="m1r3" value="0"/>
+            <input type="text" class="m1r3" value="0"/>
+            <input type="text" class="m1r3" value="0"/>
+            <div class="functions">
+                <input type="button" class="function" value="Determinant" onclick="mc.calDeterminant()"/>
+                <input type="button" class="function" value="Transpose" onclick="mc.transposeMatrix()"/>
+                <input type="button" class="function" value="Rank" onclick="mc.calRank()"/>
+                <input type="button" class="function" value="Clear" onclick="mc.clear()"/>
+                
+            </div>
+        </div>
+        <div id="operations">
+            <input class="operation" type="button" value="A + B" onclick="mc.addMatrix()"/>
+            <input class="operation" type="button" value="A - B" onclick="mc.subtractMatrix()"/>
+            <input class="operation" type="button" value="A &times B" onclick="mc.multiplyMatrix()"/>
+        </div>
+        <div id="matrix2" class="parent">
+             <h1 class="title">Matrix B</h1>
+             <input type="text" class="m2r1" value="0"/>
+             <input type="text" class="m2r1" value="0"/>
+             <input type="text" class="m2r1" value="0"/>
+             <input type="text" class="m2r2" value="0"/>
+             <input type="text" class="m2r2" value="0"/>
+             <input type="text" class="m2r2" value="0"/>
+             <input type="text" class="m2r3" value="0"/>
+             <input type="text" class="m2r3" value="0"/>
+             <input type="text" class="m2r3" value="0"/>
+        </div>
+    </div>
+    <br>
+    <div id="lower">
+        
+        <textarea wrap="soft" id="console" cols="20" rows="10" disabled>Result:</textarea>
+    </div>
+</section>
+</body>
+</html>
