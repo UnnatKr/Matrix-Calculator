@@ -15,4 +15,7 @@ and also to perform basic operations such as :
 ## Try it out
 [https://unnatkr.github.io/Matrix-Calculator/](https://unnatkr.github.io/Matrix-Calculator/)
 
-
+## Technologies used:
+- HTML
+- CSS
+- Javascript
