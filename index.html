@@ -23,10 +23,10 @@
             <input type="text" class="m1r3" value="0"/>
             <input type="text" class="m1r3" value="0"/>
             <div class="functions">
-                <input type="button" class="function" value="Determinant" onclick="mc.calDeterminant()"/>
-                <input type="button" class="function" value="Transpose" onclick="mc.transposeMatrix()"/>
-                <input type="button" class="function" value="Rank" onclick="mc.calRank()"/>
-                <input type="button" class="function" value="Clear" onclick="mc.clear()"/>
+                <input type="button" class="function" value="Determinant(A)" onclick="mc.calDeterminantA()"/>
+                <input type="button" class="function" value="Transpose(A)" onclick="mc.transposeMatrixA()"/>
+                <input type="button" class="function" value="Rank(A)" onclick="mc.calRankA()"/>
+                
                 
             </div>
         </div>
@@ -34,6 +34,7 @@
             <input class="operation" type="button" value="A + B" onclick="mc.addMatrix()"/>
             <input class="operation" type="button" value="A - B" onclick="mc.subtractMatrix()"/>
             <input class="operation" type="button" value="A &times B" onclick="mc.multiplyMatrix()"/>
+            <input type="button" class="operation" value="Clear" onclick="mc.clear()"/>
         </div>
         <div id="matrix2" class="parent">
              <h1 class="title">Matrix B</h1>
@@ -46,6 +47,13 @@
              <input type="text" class="m2r3" value="0"/>
              <input type="text" class="m2r3" value="0"/>
              <input type="text" class="m2r3" value="0"/>
+             <div class="functions">
+                <input type="button" class="function" value="Determinant(B)" onclick="mc.calDeterminantB()"/>
+                <input type="button" class="function" value="Transpose(B)" onclick="mc.transposeMatrixB()"/>
+                <input type="button" class="function" value="Rank(B)" onclick="mc.calRankB()"/>
+                
+                
+            </div>
         </div>
     </div>
     <br>

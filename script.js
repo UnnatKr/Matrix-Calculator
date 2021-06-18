@@ -66,7 +66,7 @@ class MatrixCalculator {
 		this.calculateDimensions();
 	}
 	
-    calDeterminant() {
+    calDeterminantA() {
 		this.rebuildMatrix();
 		if (this.AxDimension!=this.AyDimension) {
 			this.determinantA=null;
@@ -91,13 +91,13 @@ class MatrixCalculator {
 			determinant = Math.round((op1+op2+op3-r1-r2-r3)*100)/100;
 		}
 		this.determinantA = determinant;
-		this.printOnConsole("Determinant: "+determinant)
+		this.printOnConsole("Determinant of matrix A: "+determinant)
 		return;
 	}
 
-    transposeMatrix() {
+    transposeMatrixA() {
 		this.rebuildMatrix();
-		var string = "Transposition result:\r";
+		var string = "Transposition result of matrix A:\r";
 		for (var i =0; i<this.AxDimension; i++) {
 			for (var j=0; j<this.AyDimension; j++) {
 				string=string+"\t"+this.matrixA[j][i];
@@ -107,7 +107,7 @@ class MatrixCalculator {
 		this.printOnConsole(string);
 	}
 	
-	calRank() {
+	calRankA() {
 		this.rebuildMatrix();
 		
 		var rank = this.AxDimension;
@@ -147,11 +147,12 @@ class MatrixCalculator {
 				row--; 
 			} 
 		} 
-		this.printOnConsole("Matrix rank is: "+rank); 		
+		this.printOnConsole("Rank of matrix A: "+rank); 		
 	}
 
 	clear(){
        this.printOnConsole(document.getElementById('console').value = 'Result:');
+
 	}
     addMatrix() {
 		this.rebuildMatrix();
@@ -232,7 +233,90 @@ class MatrixCalculator {
 		}
 		this.printOnConsole(string);
 	}
+	calDeterminantB() {
+		this.rebuildMatrix();
+		if (this.BxDimension!=this.ByDimension) {
+			this.determinantB=null;
+			this.printOnConsole("Non-square matrix, determinant cannot be calculated.");
+			return;
+		}
+		var determinant;
+		if (this.BxDimension==1) {
+			determinant = this.matrixB[0][0];
+		}
+		if (this.BxDimension==2) {
+			determinant = (this.matrixB[0][0]*this.matrixB[1][1])-(this.matrixB[0][1]*this.matrixB[1][0]);
+		}
+		if (this.BxDimension==3) {
+			var op1, op2, op3, r1, r2, r3;
+			op1 = this.matrixB[0][0]*this.matrixB[1][1]*this.matrixB[2][2];
+			op2 = this.matrixB[0][1]*this.matrixB[1][2]*this.matrixB[2][0];
+			op3 = this.matrixB[0][2]*this.matrixB[1][0]*this.matrixB[2][1];
+			r1 = this.matrixB[0][2]*this.matrixB[1][1]*this.matrixB[2][0];
+			r2 = this.matrixB[0][0]*this.matrixB[1][2]*this.matrixB[2][1];
+			r3 = this.matrixB[0][1]*this.matrixB[1][0]*this.matrixB[2][2];
+			determinant = Math.round((op1+op2+op3-r1-r2-r3)*100)/100;
+		}
+		this.determinantB = determinant;
+		this.printOnConsole("Determinant of matrix B: "+determinant)
+		return;
+	}
+
+    transposeMatrixB() {
+		this.rebuildMatrix();
+		var string = "Transposition result of matrix B:\r";
+		for (var i =0; i<this.BxDimension; i++) {
+			for (var j=0; j<this.ByDimension; j++) {
+				string=string+"\t"+this.matrixB[j][i];
+			}
+			string=string+"\r";
+		}
+		this.printOnConsole(string);
+	}
 	
+	calRankB() {
+		this.rebuildMatrix();
+		
+		var rank = this.BxDimension;
+		var row = this.ByDimension;
+		var mat = this.matrixB;
+		
+		for (row = 0; row < rank; row++) { 
+			if (mat[row][row]) { 
+			   for (var col = 0; col < this.ByDimension; col++) { 
+				   if (col != row) { 
+					 var mult = Math.round(mat[col][row] / mat[row][row]*100)/100; 
+					 for (var i = 0; i < rank; i++) 
+					   mat[col][i] -= mult * mat[row][i]; 
+				  } 
+			   } 
+			} 
+			else
+			{ 
+				var reduce = true; 
+				for (var i = row + 1; i < this.ByDimension;  i++) 
+				{ 
+					if (mat[i][row]) 
+					{ 
+						var aux = mat[row];
+						mat[row] = math[i];
+						math[i] = aux;
+						reduce = false; 
+						break; 
+					} 
+				} 
+				if (reduce) 
+				{ 
+					rank--; 
+					for (i = 0; i < this.ByDimension; i++) 
+						mat[i][row] = mat[i][rank]; 
+				} 
+				row--; 
+			} 
+		} 
+		this.printOnConsole("Rank of matrix B: "+rank); 		
+	}
+
 	printOnConsole(val) {
 		document.getElementById("console").value = val;
 	}
