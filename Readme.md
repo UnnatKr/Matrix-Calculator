@@ -10,7 +10,8 @@ and also to perform basic operations such as :
 - Subtraction
 - Multiplication
 
-![Matrix Calculator](./images/outlook.png)
+![Matrix Calculator](./images/img.png);
+
 
 ## Try it out
 [https://unnatkr.github.io/Matrix-Calculator/](https://unnatkr.github.io/Matrix-Calculator/)
