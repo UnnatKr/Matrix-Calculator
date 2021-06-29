@@ -10,13 +10,20 @@ and also to perform basic operations such as :
 - Subtraction
 - Multiplication
 
-![Matrix Calculator](./images/img.png);
+![Matrix Calculator](./images/img.png)
 
 
 ## Try it out
 [https://unnatkr.github.io/Matrix-Calculator/](https://unnatkr.github.io/Matrix-Calculator/)
 
+## Cloning this repository
+```
+$ git clone https://github.com/UnnatKr/Matrix-Calculator.git
+```
+
 ## Technologies used:
-- HTML
-- CSS
-- Javascript
+* **HTML**
+* **CSS**
+* **Javascript**
+# This project is Licensed under the MIT License
+ [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE.txt)
