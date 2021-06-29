@@ -25,5 +25,5 @@ $ git clone https://github.com/UnnatKr/Matrix-Calculator.git
 * **HTML**
 * **CSS**
 * **Javascript**
-# This project is Licensed under the MIT License
+## This project is Licensed under the MIT License
  [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE.txt)
